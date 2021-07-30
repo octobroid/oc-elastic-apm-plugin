@@ -1,6 +1,6 @@
-# Elastic APM for OctoberCMS (based on arkaitzgarro Package)
+# Elastic APM for OctoberCMS (based on arkaitzgarro/elastic-apm-laravel Package)
 
-Elastic APM agent for v2 intake API. Compatible with Laravel 6+.
+Elastic APM agent for v2 intake API. Compatible with Laravel 5.5+.
 
 
 ## Prerequisites
@@ -10,12 +10,6 @@ You are responsible for completing the following as part of installing this pack
 ### HTTP Client
 
 In order to minimize potential dependency conflicts, this package does not dictate the HTTP client which will be used to send data to APM. Instead, your project must include a suitable [PSR-18](https://www.php-fig.org/psr/psr-18/) compatible implementation. The easiest way to do this is using the [php-http](http://docs.php-http.org/en/latest/) adapter for GuzzleHTTP. Require either the guzzle6 or guzzle7 adapter, depending on your specific needs.
-
-```bash
-    # if you are using guzzlehttp/guzzle version 6
-    # note that you must use >=2.0 of the guzzle6-adapter
-    composer require php-http/guzzle6-adapter
-```
 
 ```bash
     # if you are using guzzlehttp/guzzle version 7
@@ -57,13 +51,13 @@ The following environment variables are supported in the default configuration:
 |APM_THRESHOLD      | Query threshold in milliseconds, defaults to `200`. If a query takes longer then 200ms, we enable the query log. Make sure you set `APM_QUERYLOG=auto`. |
 |APM_MAXTRACEITEMS  | Defaults to `1000`. Max number of child items displayed when viewing trace details. |
 
-You may also publish the `elastic-apm-laravel.php` configuration file to change additional settings:
+You may also publish the `octobro-elastic-apm.php` configuration file to change additional settings:
 
 ```bash
 php artisan vendor:publish --tag=config
 ```
 
-Once published, open the `config/elastic-apm-laravel.php` file and review the various settings.
+Once published, open the `config/octobro-elastic-apm.php` file and review the various settings.
 
 ## Logging
 
